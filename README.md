@@ -1,50 +1,117 @@
-# Sistema de Gestão de Estoque
--------------------------------------------------------------------------------------------
+# 📦 Sistema de Gestão de Estoque
+
+---
 
 ## 📌 Descrição
-Sistema desenvolvido em Python para controle de estoque de produtos.
 
-O projeto permite cadastrar produtos, registrar entradas e saídas de estoque, consultar produtos e identificar estoque baixo.
--------------------------------------------------------------------------------------------
+Sistema desenvolvido em Python para gerenciamento de estoque de produtos, utilizando banco de dados SQLite para armazenamento das informações.
+
+O projeto permite realizar controle de produtos, movimentação de estoque e autenticação de usuários através de login.
+
+---
 
 ## 🎯 Objetivo
+
 Aplicar conceitos de:
+
 - Programação estruturada
 - Manipulação de dados
 - Funções em Python
-- SQLite
-- Controle de versão com GitHub
--------------------------------------------------------------------------------------------
+- Banco de dados SQLite
+- CRUD básico
+- Organização de código
+- Controle de versão com Git/GitHub
+
+---
 
 ## ⚙️ Funcionalidades
+
+### 👤 Usuários
+- Cadastro de usuários
+- Login no sistema
+
+### 📦 Produtos
 - Cadastro de produtos
-- Entrada de estoque
-- Saída de estoque
 - Consulta de produtos
-- Alerta de estoque baixo
-- Banco de dados SQLite
--------------------------------------------------------------------------------------------
+- Listagem de estoque
 
-## 💻 Tecnologias utilizadas
+### 📊 Controle de Estoque
+- Entrada de produtos
+- Saída de produtos
+- Verificação de estoque baixo
+
+### 💾 Banco de Dados
+- Armazenamento com SQLite
+- Criação automática das tabelas
+
+---
+
+## 🗂️ Estrutura do Projeto
+
+gestao-estoque/
+│
+├── .gitignore
+├── estoque.db
+├── gestao_estoque.py
+└── README.md
+
+
+---
+
+## Tecnologias Utilizadas
+
 - Python
-- SQLite
-- Git/GitHub
--------------------------------------------------------------------------------------------
+- SQLite3
+- Git
+- GitHub
+- VS Code
 
-## ▶️ Como executar
+---
 
-1. Clone o repositório:
+## ▶️ Como Executar
+
+### 1️⃣ Clonar o repositório
+
 ```bash
 git clone https://github.com/Raianemon19/projeto-gerenciador_estoque
 ```
 
-2. Execute o arquivo:
+---
+
+### 2️⃣ Acessar a pasta do projeto
+
+```bash
+cd projeto-gerenciador_estoque
+```
+
+---
+
+### 3️⃣ Executar o sistema
+
 ```bash
 python gestao_estoque.py
 ```
 
--------------------------------------------------------------------------------------------
+---
+
+## 🛠️ Funcionalidades Futuras
+
+- Exclusão de produtos
+- Atualização de dados
+- Relatórios de estoque
+- Interface gráfica
+- Criptografia de senha
+
+---
+
 ## 👥 Integrantes
+
 - Arthur Ribeiro
 - Diogo
 - Raiane dos Santos de Oliveira
+
+---
+
+## 📚 Observações
+
+Projeto desenvolvido para fins acadêmicos, com foco na prática de lógica de programação, organização de código e utilização de banco de dados com Python.

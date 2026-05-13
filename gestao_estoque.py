@@ -1,11 +1,17 @@
+# =====================================
+# IMPORTAÇÕES
+# =====================================
 import sqlite3
+
+import os
 
 # =====================================
 # CONEXÃO COM BANCO
 # =====================================
 
-conexao = sqlite3.connect("estoque.db")
+caminho_banco = os.path.join(os.path.dirname(__file__), "estoque.db")
 
+conexao = sqlite3.connect(caminho_banco)
 cursor = conexao.cursor()
 
 # =====================================
@@ -13,6 +19,7 @@ cursor = conexao.cursor()
 # =====================================
 
 def criar_tabela():
+    
 
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS produtos (
@@ -26,12 +33,42 @@ def criar_tabela():
 
     conexao.commit()
 
+def criar_tabela_usuarios():
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS usuarios (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        nome TEXT NOT NULL,
+        senha TEXT NOT NULL
+    )
+    """)
+
+    conexao.commit()
+
+# =====================================
+# FUNÇÕES DE USUÁRIO
+# =====================================
+
+# =====================================
+# FUNÇÕES DE CADASTRO
+# =====================================
+
+# =====================================
+# FUNÇÕES DE ESTOQUE
+# =====================================
+
+# =====================================
+# FUNÇÕES DE CONSULTA
+# =====================================
+
+# =====================================
+# MENU
+# =====================================
+
 # =====================================
 # EXECUÇÃO
 # =====================================
-
+criar_tabela_usuarios() # executa a função
 criar_tabela()
-
-print("Banco criado com sucesso!")
 
 conexao.close()
