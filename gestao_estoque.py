@@ -103,7 +103,34 @@ def cadastrar_produto() -> None:
 # =====================================
 # FUNÇÕES DE ESTOQUE
 # =====================================
+def listar_produtos() -> None:
+    """Lista todos os produtos cadastrados."""
 
+    print("\n========= LISTA DE PRODUTOS =========")
+
+    # Busca todos os produtos
+    cursor.execute(
+        """
+        SELECT id, nome, categoria, preco, quantidade
+        FROM produtos
+    """
+    )
+
+    produtos = cursor.fetchall()
+
+    # Verifica se existem produtos
+    if not produtos:
+        print("\nNenhum produto cadastrado.\n")
+        return
+
+    # Exibe cada produto
+    for produto in produtos:
+        print(f"ID: {produto[0]}")
+        print(f"Nome: {produto[1]}")
+        print(f"Categoria: {produto[2]}")
+        print(f"Preço: R$ {produto[3]:.2f}")
+        print(f"Quantidade: {produto[4]}")
+        print("-" * 35)
 # =====================================
 # FUNÇÕES DE CONSULTA
 # =====================================
