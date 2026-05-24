@@ -107,7 +107,47 @@ def cadastrar_produto() -> None:
 # =====================================
 # FUNÇÕES DE CONSULTA
 # =====================================
+def consultar_produto() -> None:
+    """Consulta um produto pelo ID."""
 
+    print("\n========= CONSULTA DE PRODUTO =========")
+
+    try:
+        produto_id = int(input("Digite o ID do produto: "))
+
+    except ValueError:
+        print("\n[ERRO] O ID deve ser um número inteiro.\n")
+        return
+
+    # Busca o produto no banco
+    cursor.execute(
+        """
+        SELECT id, nome, categoria, preco, quantidade
+        FROM produtos
+        WHERE id = ?
+    """,
+        (produto_id,),
+    )
+
+    # Pega apenas um resultado
+    produto = cursor.fetchone()
+
+    # Verifica se encontrou
+    if not produto:
+        print("\nProduto não encontrado.\n")
+        return
+
+    # Desestrutura os dados
+    id_prod, nome, categoria, preco, quantidade = produto
+
+    # Exibe os dados
+    print("\n========= PRODUTO ENCONTRADO =========")
+    print(f"ID: {id_prod}")
+    print(f"Nome: {nome}")
+    print(f"Categoria: {categoria}")
+    print(f"Preço: R$ {preco:.2f}")
+    print(f"Quantidade: {quantidade}")
+    print("======================================\n")
 # =====================================
 # MENU
 # =====================================
