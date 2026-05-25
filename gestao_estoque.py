@@ -48,6 +48,27 @@ def criar_tabela_usuarios():
 # =====================================
 # FUNÇÕES DE USUÁRIO
 # =====================================
+def fazer_login():
+    print("\n=== LOGIN ===")
+    nome = input("Nome: ")
+    senha = input("Senha: ")
+
+    # Buscar na tabela por um registro com o exato Nome e Senha digitados
+    cursor.execute("""
+    SELECT * FROM usuarios
+    WHERE nome = ? AND senha = ?
+    """, (nome, senha))
+
+    # Capturar o primeiro resultado encontrado pela consulta
+    usuario = cursor.fetchone()
+
+    # Verificar se o cadastro foi encontrado no banco de dados
+    if usuario:
+        print("Login realizado com sucesso!")
+        return True   # Retornar Verdadeiro para liberar o acesso ao menu de estoque
+    else:
+        print("Usuário ou senha inválidos.")
+        return False  # Retornar Falso para barrar o acesso
 
 # =====================================
 # FUNÇÕES DE CADASTRO
