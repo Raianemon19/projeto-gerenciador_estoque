@@ -48,27 +48,6 @@ def criar_tabela_usuarios():
 # =====================================
 # FUNÇÕES DE USUÁRIO
 # =====================================
-def fazer_login():
-    print("\n=== LOGIN ===")
-    nome = input("Nome: ")
-    senha = input("Senha: ")
-
-    # Buscar na tabela por um registro com o exato Nome e Senha digitados
-    cursor.execute("""
-    SELECT * FROM usuarios
-    WHERE nome = ? AND senha = ?
-    """, (nome, senha))
-
-    # Capturar o primeiro resultado encontrado pela consulta
-    usuario = cursor.fetchone()
-
-    # Verificar se o cadastro foi encontrado no banco de dados
-    if usuario:
-        print("Login realizado com sucesso!")
-        return True   # Retornar Verdadeiro para liberar o acesso ao menu de estoque
-    else:
-        print("Usuário ou senha inválidos.")
-        return False  # Retornar Falso para barrar o acesso
 
 # =====================================
 # FUNÇÕES DE CADASTRO
@@ -199,7 +178,58 @@ def consultar_produto() -> None:
 # =====================================
 # MENU
 # =====================================
+while True:
+    # Adicionar formatação de cores ao título do terminal por meio de códigos ANSI (\033...)
+    print('\033[1;31;43m \n========== SISTEMA ==========\033[m')
+    print("1 - Cadastrar usuário")
+    print("2 - Login")
+    print("3 - Sair")
 
+    opcao = input("Escolha: ")
+
+    if opcao == "1":
+        cadastrar_usuario()
+
+    elif opcao == "2":
+        login = fazer_login() # Armazenar o retorno booleano da função de login
+
+        # Permitir o acesso ao menu interno de estoque apenas se o login for bem-sucedido
+        if login:
+            while True:
+                print("\n======= MENU ESTOQUE =======")
+                print("1 - Cadastrar produto")
+                print("2 - Listar produtos")
+                print("3 - Registrar entrada")
+                print("4 - Registrar saída")
+                print("5 - Estoque baixo")
+                print("6 - Logout")
+
+                opcao_estoque = input("Escolha: ")
+
+                if opcao_estoque == "1":
+                    cadastrar_produto()
+                elif opcao_estoque == "2":
+                    listar_produtos()
+                elif opcao_estoque == "3":
+                    registrar_entrada()
+                elif opcao_estoque == "4":
+                    registrar_saida()
+                elif opcao_estoque == "5":
+                    estoque_baixo()
+                elif opcao_estoque == "6":
+                    break # Interromper o loop interno do estoque e retornar ao menu de login
+                else:
+                    print("Opção inválida.")
+
+    elif opcao == "3":
+        # Encerrar as conexões com o banco de dados de forma segura antes de finalizar o script
+        cursor.close()
+        conexao.close()
+        print("Sistema encerrado.")
+        break # Interromper o loop principal para finalizar o programa
+
+    else:
+        print("Opção inválida.")
 # =====================================
 # EXECUÇÃO
 # =====================================
