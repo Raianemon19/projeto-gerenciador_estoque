@@ -17,29 +17,35 @@ CRUD de produtos
 Segurança básica com hash de senha
 Organização de código
 Controle de versão com Git/GitHub
+
 ⚙️ Funcionalidades
+
 👤 Usuários
 Cadastro de usuários
 Login no sistema
 Senhas protegidas com criptografia SHA-256
 Ocultação de senha com getpass
+
 📦 Produtos
 Cadastro de produtos
 Consulta de produto por ID
 Listagem de produtos
 Remoção de produtos
 Organização dos produtos por usuário
+
 📊 Controle de Estoque
 Entrada de produtos
 Saída de produtos
 Cálculo do valor total em estoque
 Alerta automático de estoque baixo
 Definição de estoque mínimo
+
 💾 Banco de Dados
 Armazenamento utilizando SQLite
 Criação automática das tabelas
 Relacionamento entre usuários e produtos
 Persistência dos dados em estoque.db
+
 🗂️ Estrutura do Projeto
 gestao-estoque/
 │
@@ -47,6 +53,7 @@ gestao-estoque/
 ├── estoque.db
 ├── gestao_estoque.py
 └── README.md
+
 🛠️ Tecnologias Utilizadas
 Python
 SQLite3
