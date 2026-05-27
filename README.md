@@ -1,117 +1,98 @@
-# 📦 Sistema de Gestão de Estoque
-
----
-
-## 📌 Descrição
+📦 Sistema de Gestão de Estoque
+📌 Descrição
 
 Sistema desenvolvido em Python para gerenciamento de estoque de produtos, utilizando banco de dados SQLite para armazenamento das informações.
 
-O projeto permite realizar controle de produtos, movimentação de estoque e autenticação de usuários através de login.
+O sistema possui autenticação de usuários com senha criptografada em SHA-256, controle completo de estoque e organização dos produtos por usuário.
 
----
-
-## 🎯 Objetivo
+🎯 Objetivo
 
 Aplicar conceitos de:
 
-- Programação estruturada
-- Manipulação de dados
-- Funções em Python
-- Banco de dados SQLite
-- CRUD básico
-- Organização de código
-- Controle de versão com Git/GitHub
-
----
-
-## ⚙️ Funcionalidades
-
-### 👤 Usuários
-- Cadastro de usuários
-- Login no sistema
-
-### 📦 Produtos
-- Cadastro de produtos
-- Consulta de produtos
-- Listagem de estoque
-
-### 📊 Controle de Estoque
-- Entrada de produtos
-- Saída de produtos
-- Verificação de estoque baixo
-
-### 💾 Banco de Dados
-- Armazenamento com SQLite
-- Criação automática das tabelas
-
----
-
-## 🗂️ Estrutura do Projeto
-
+Programação estruturada
+Manipulação de dados
+Funções em Python
+Banco de dados SQLite
+CRUD de produtos
+Segurança básica com hash de senha
+Organização de código
+Controle de versão com Git/GitHub
+⚙️ Funcionalidades
+👤 Usuários
+Cadastro de usuários
+Login no sistema
+Senhas protegidas com criptografia SHA-256
+Ocultação de senha com getpass
+📦 Produtos
+Cadastro de produtos
+Consulta de produto por ID
+Listagem de produtos
+Remoção de produtos
+Organização dos produtos por usuário
+📊 Controle de Estoque
+Entrada de produtos
+Saída de produtos
+Cálculo do valor total em estoque
+Alerta automático de estoque baixo
+Definição de estoque mínimo
+💾 Banco de Dados
+Armazenamento utilizando SQLite
+Criação automática das tabelas
+Relacionamento entre usuários e produtos
+Persistência dos dados em estoque.db
+🗂️ Estrutura do Projeto
 gestao-estoque/
 │
 ├── .gitignore
 ├── estoque.db
 ├── gestao_estoque.py
 └── README.md
-
-
----
-
-## Tecnologias Utilizadas
-
-- Python
-- SQLite3
-- Git
-- GitHub
-- VS Code
-
----
-
-## ▶️ Como Executar
-
-### 1️⃣ Clonar o repositório
-
-```bash
+🛠️ Tecnologias Utilizadas
+Python
+SQLite3
+Hashlib
+Getpass
+Git
+GitHub
+VS Code
+▶️ Como Executar
+1️⃣ Clonar o repositório
 git clone https://github.com/Raianemon19/projeto-gerenciador_estoque
-```
-
----
-
-### 2️⃣ Acessar a pasta do projeto
-
-```bash
+2️⃣ Acessar a pasta do projeto
 cd projeto-gerenciador_estoque
-```
-
----
-
-### 3️⃣ Executar o sistema
-
-```bash
+3️⃣ Executar o sistema
 python gestao_estoque.py
-```
+🔐 Segurança
 
----
+O sistema utiliza:
 
-## 🛠️ Funcionalidades Futuras
+Criptografia SHA-256 para armazenamento de senhas
+Ocultação de senha no terminal utilizando getpass
+Separação de produtos por usuário autenticado
 
-- Exclusão de produtos
-- Atualização de dados
-- Relatórios de estoque
-- Interface gráfica
-- Criptografia de senha
+🧠 Conceitos Aplicados
+CRUD
+Banco de dados relacional
+Relacionamento entre tabelas
+Tratamento de erros
+Validação de entradas
+Modularização com funções
+Manipulação de banco SQLite
+Segurança básica de autenticação
 
----
+👥 Integrantes
+Arthur Ribeiro Ferreira
+Diogo Ribeiro Rodrigues Brauna
+Raiane dos Santos de Oliveira
+📚 Observações
 
-## 👥 Integrantes
+Projeto desenvolvido para fins acadêmicos, com foco na prática de:
 
-- Arthur Ribeiro
-- Diogo
-- Raiane dos Santos de Oliveira
-
----
-
+Lógica de programação
+Programação em Python
+Banco de dados SQLite
+Segurança básica de autenticação
+Organização e estruturação de sistemas
 ## 📚 Observações
 
 Projeto desenvolvido para fins acadêmicos, com foco na prática de lógica de programação, organização de código e utilização de banco de dados com Python.
